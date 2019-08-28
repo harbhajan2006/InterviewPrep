@@ -1,0 +1,143 @@
+java jdbc
+https://www.journaldev.com/2681/jdbc-tutorial
+https://www.journaldev.com/2529/jdbc-interview-questions-and-answers#execute-executeQuery-executeUpdate
+
+spring interview questions:
+all result from google
+
+spring jdbc:
+https://www.journaldev.com/2593/spring-jdbc-example
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+https://docs.spring.io/spring/docs/2.0.x/reference/jdbc.html
+JdbcTemplate need datasource 
+https://docs.spring.io/spring/docs/2.0.x/reference/jdbc.html
+
+spring jpa
+
+
+
+hibernate tutorial
+https://howtodoinjava.com/hibernate-tutorials/
+https://www.journaldev.com/3633/hibernate-interview-questions-and-answers
+
+REST
+https://restfulapi.net/rest-put-vs-post/
+put is to create ; if resouce does exist then update
+https://howtodoinjava.com/spring-boot2/rest-api-example/
+
+SPRING SECURITY
+telusko
+OAUTH2
+client id : 506113704844-es27ot06f377ron9jnovssao0t2nou63.apps.googleusercontent.com
+client secret: vY_GguT9S-eI_iEu7Jct5IW-
+https://www.devglan.com/spring-security/spring-boot-security-oauth2-example
+https://www.baeldung.com/rest-api-spring-oauth2-angular
+https://spring.io/guides/topicals/spring-security-architecture
+https://www.dineshonjava.com/spring-security-interview-questions-and-answers/
+https://www.baeldung.com/java-config-spring-security
+https://www.dineshonjava.com/spring-security-take-baby-step-to-secure/
+
+
+delegate design pattern
+https://www.javaguides.net/2018/08/business-delegate-design-pattern-in-java.html
+t is used in order to decouple or reduce the coupling between the presentation tier and business services. It is also required to hide the details of implementation of the services, meaning it is needed to remove the function of lookup in the business tier code within the presentation tier code.
+
+
+Spring boot testing
+unit test - junit
+mockito
+mvc - MockMVC
+Integration Test
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+
+The @SpringBootTest annotation tells Spring Boot to go and look for a main configuration class
+ (one with @SpringBootApplication for instance), and use that to start a Spring application context
+ 
+ 1) @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT) testing at random port
+ 2) 
+ 
+ @WebMvcTest - to test web layer
+ @DataJpaTest - to test jpa
+ https://spring.io/guides/gs/testing-web/
+ https://reflectoring.io/spring-boot-test/
+ 
+ 
+ spring jpa:
+ https://www.baeldung.com/the-persistence-layer-with-spring-and-jpa
+ https://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-part-four-jpa-criteria-queries/
+ ** hikariDataSource, BasicDataSource, DriverManagerDataSource
+ https://www.mkyong.com/spring-boot/spring-boot-spring-data-jpa-oracle-example/
+ https://www.mkyong.com/spring-boot/spring-boot-spring-data-jpa-oracle-example/
+ 
+ https://www.baeldung.com/jpa-one-to-one
+ https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
+ https://howtodoinjava.com/hibernate/hibernate-jpa-cascade-types/
+ https://www.baeldung.com/jpa-join-column
+ https://www.baeldung.com/jpa-joincolumn-vs-mappedby
+ http://fruzenshtein.com/hibernate-join-table-intermediary/
+ https://www.baeldung.com/hibernate-save-persist-update-merge-saveorupdate
+ http://www.thejavageek.com/2014/01/12/jpa-crud-example/
+ https://www.oracle.com/technetwork/articles/vasiliev-jpql-087123.html
+ https://www.objectdb.com/java/jpa/query/jpql/structure
+ https://www.journaldev.com/17803/jpa-hibernate-annotations
+ 
+ 
+ 
+ SQL
+ https://www.geeksforgeeks.org/sql-constraints/
+ https://www.dofactory.com/sql/join
+ https://www.geeksforgeeks.org/indexing-in-databases-set-1/
+ https://dev.to/databasestar/a-guide-to-indexes-in-oracle
+ https://www.interviewbit.com/sql-interview-questions/
+ https://stackoverflow.com/questions/1251636/what-do-clustered-and-non-clustered-index-actually-mean
+ https://www.guru99.com/database-normalization.html
+ https://www.interviewbit.com/sql-interview-questions/
+ 
+ delete is dml , truncate is ddl.
+ truncate is faster.
+ in oracle, delete can be roll back and truncate can not.
+You are allowed to DELETE records that have foreign key constraints defined. A TRUNCATE cannot be executed if these same constraints are in place.
+ delete log all row in dbms , where as truncatee  log pages.
+ truncate lock the table.
+ deletion dont reset table structure. Truncate free up the table space.
+ 
+ 
+ 
+ 
+ mappedBy = “user” - We use mappedBy attribute in the User entity to tell hibernate that the User entity is not responsible for this relationship and It should look for 
+ a field named user in the UserProfile entity to find the configuration for the JoinColumn/ForeignKey column.
+ 
+ A foreign key with cascade delete means that if a record in the parent table is deleted, then the corresponding records 
+ in the child table will automatically be deleted. This is called a cascade delete in SQL Server.
+ @Temporal annotation in JPA implementation can only be used with the fields and property get methods. Also, this annotation can be specified for the persistent fields or properties java.util.Data or java.util.Calendar. This annotation is available since the release of JPA 1.0. @Temporal solves the one of the major issue of converting the date and time values from Java object to compatible database type and retrieving back to the application. When Java class declares the fields java.sql.Date or java.sql.Time, then it is compatible with the database types and will not have any issues. But, when we are using the java.util.Date or java.util.Calendar, 
+ then we have to specify Temporal types to map the appropriate database types when persisting to the database.
+
+http://www.complexsql.com/query-to-find-second-highest-salary-of-employee/
+select max(sal) as maxsalary from salary where sal < ( select max(sal) as maxsalary from salary );
+
+SELECT *
+  FROM (
+       SELECT *
+         FROM sales
+        ORDER BY sale_date DESC
+       )
+ WHERE rownum <= 10
+ 
+ https://use-the-index-luke.com/sql/partial-results/top-n-queries
+ 
+ https://www.oracletutorial.com/advanced-oracle-sql/find-duplicate-records-oracle/
+ SELECT *
+FROM fruits
+WHERE (fruit_name, color) IN
+    (SELECT fruit_name,
+        color
+    FROM fruits
+    GROUP BY fruit_name,
+        color
+    HAVING COUNT(*) > 1
+    )
+ORDER BY fruit_name, color;
+
+https://techblog.topdesk.com/coding/choosing-a-database-connection-pool/
