@@ -82,7 +82,7 @@ The @SpringBootTest annotation tells Spring Boot to go and look for a main confi
  https://www.oracle.com/technetwork/articles/vasiliev-jpql-087123.html
  https://www.objectdb.com/java/jpa/query/jpql/structure
  https://www.journaldev.com/17803/jpa-hibernate-annotations
- 
+ https://www.dineshonjava.com/hibernate/implementing-inheritance-in-hibernate/
  
  
  SQL
@@ -141,3 +141,5 @@ WHERE (fruit_name, color) IN
 ORDER BY fruit_name, color;
 
 https://techblog.topdesk.com/coding/choosing-a-database-connection-pool/
+https://stackify.com/logging-logback/
+
