@@ -1,0 +1,12 @@
+batch
+cache
+jdbc
+web
+dataJPA
+security
+Boot
+Core
+transaction
+cloud stream
+spring feature- scheduler, profiles, property place holder
+Transaction
